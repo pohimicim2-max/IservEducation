@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IservEducation.API_Layer", "IservEducation.API_Layer\IservEducation.API_Layer.csproj", "{79CC0908-E647-4572-8B70-1CBFB46E4633}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79CC0908-E647-4572-8B70-1CBFB46E4633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CC0908-E647-4572-8B70-1CBFB46E4633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CC0908-E647-4572-8B70-1CBFB46E4633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CC0908-E647-4572-8B70-1CBFB46E4633}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18866845-0CA8-4081-8A88-2D0143C92016}
+	EndGlobalSection
+EndGlobal
