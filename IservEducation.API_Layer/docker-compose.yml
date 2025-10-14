@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: iserv_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: iserv_education_db
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "9999:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - iserv_network
+
+volumes:
+  postgres_data:
+
+networks:
+  iserv_network:
+    driver: bridge
