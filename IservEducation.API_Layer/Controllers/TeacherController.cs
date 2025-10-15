@@ -1,7 +1,7 @@
 ﻿namespace IservEducation.API_Layer.Controllers;
 
-using IservEducation.API_Layer.Requests;
-using IservEducation.API_Layer.Responses;
+using IservEducation.API_Layer.Conracts.Requests;
+using IservEducation.API_Layer.Conracts.Responses;
 using IservEducation.Application_Layer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

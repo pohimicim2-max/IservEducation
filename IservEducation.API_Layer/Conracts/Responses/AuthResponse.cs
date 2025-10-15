@@ -1,4 +1,4 @@
-﻿namespace IservEducation.API_Layer.Responses;
+﻿namespace IservEducation.API_Layer.Conracts.Responses;
 
 public record AuthResponse(
 	Guid TeacherId,

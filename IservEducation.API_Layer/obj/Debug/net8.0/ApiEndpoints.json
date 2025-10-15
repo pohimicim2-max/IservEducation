@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "IservEducation.API_Layer.Requests.CreateTeacherRequest",
+        "Type": "IservEducation.API_Layer.Conracts.Requests.CreateTeacherRequest",
         "IsRequired": true
       }
     ],
@@ -41,7 +41,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "IservEducation.API_Layer.Requests.LoginRequest",
+        "Type": "IservEducation.API_Layer.Conracts.Requests.LoginRequest",
         "IsRequired": true
       }
     ],
