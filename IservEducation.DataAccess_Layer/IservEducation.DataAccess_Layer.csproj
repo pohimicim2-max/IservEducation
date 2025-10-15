@@ -16,4 +16,9 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IservEducation.Application_Layer\IservEducation.Application_Layer.csproj" />
+    <ProjectReference Include="..\IservEducation.Domain_Layer\IservEducation.Domain_Layer.csproj" />
+  </ItemGroup>
+
 </Project>

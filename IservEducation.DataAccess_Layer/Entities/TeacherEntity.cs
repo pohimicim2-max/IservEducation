@@ -9,7 +9,7 @@ public class TeacherEntity
 
 	public string FirstName { get; set; } = string.Empty;
 	public string LastName { get; set; } = string.Empty;
-	public string MiddleName { get; set; } = string.Empty;
+	public string? MiddleName { get; set; }
 
 	// Список проставленных уроков
 	public virtual ICollection<LessonEntity> Lessons { get; set; } = new List<LessonEntity>();
