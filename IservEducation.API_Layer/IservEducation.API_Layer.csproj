@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IservEducation.Application_Layer\IservEducation.Application_Layer.csproj" />
     <ProjectReference Include="..\IservEducation.DataAccess_Layer\IservEducation.DataAccess_Layer.csproj" />
+    <ProjectReference Include="..\IservEducation.Infrastructure_Layer\IservEducation.Infrastructure_Layer.csproj" />
   </ItemGroup>
 
 </Project>

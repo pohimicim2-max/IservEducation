@@ -18,7 +18,9 @@ public class TeacherRepository : ITeacherRepository
 		if (teacher == null)
 			throw new ArgumentNullException(nameof(teacher));
 
-		if (GetByLoginAsync(teacher.Login) != null)
+		var existingTeacher = await GetByLoginAsync(teacher.Login);
+
+		if (existingTeacher != null)
 			throw new InvalidOperationException($"User with login \"{teacher.Login}\" already exists");
 
 		var entity = MapToEntity(teacher);
@@ -56,14 +58,25 @@ public class TeacherRepository : ITeacherRepository
 		if (teacher == null)
 			throw new ArgumentNullException(nameof(teacher));
 
-		if (GetByLoginAsync(teacher.Login) == null)
-			throw new InvalidOperationException($"User with login \"{teacher.Login}\" is not found");
+		var existingEntity = await _dbContext.Teachers
+			.FirstOrDefaultAsync(t => t.Id == teacher.Id);
 
-		var teacherEntity = MapToEntity(teacher);
+		if (existingEntity == null)
+			throw new InvalidOperationException($"Teacher with id {teacher.Id} not found");
 
-		_dbContext.Teachers.Attach(teacherEntity);
+		var loginExists = await _dbContext.Teachers
+			.AnyAsync(t => t.Login == teacher.Login && t.Id != teacher.Id);
+
+		if (loginExists)
+			throw new InvalidOperationException($"User with login \"{teacher.Login}\" already exists");
+
+		existingEntity.Login = teacher.Login;
+		existingEntity.PasswordHash = teacher.PasswordHash;
+		existingEntity.FirstName = teacher.FirstName;
+		existingEntity.LastName = teacher.LastName;
+		existingEntity.MiddleName = teacher.MiddleName;
+
 		await _dbContext.SaveChangesAsync();
-
 		return teacher.Id;
 	}
 

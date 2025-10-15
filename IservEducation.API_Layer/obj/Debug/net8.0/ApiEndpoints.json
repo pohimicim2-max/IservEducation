@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "ContainingType": "IservEducation.API_Layer.Controllers.TeacherController",
+    "Method": "Create",
+    "RelativePath": "api/Teacher",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "IservEducation.API_Layer.Requests.CreateTeacherRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IservEducation.API_Layer.Controllers.TeacherController",
+    "Method": "Login",
+    "RelativePath": "api/Teacher/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "IservEducation.API_Layer.Requests.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
