@@ -86,6 +86,16 @@ public class TeacherService : ITeacherService
 
 		return Result.Success<Teacher>(teacher);
 	}
+
+	public async Task<Result<Teacher>> GetByIdAsync(Guid id)
+	{
+		if (id == Guid.Empty)
+			return Result.Failure<Teacher>("id are required");
+
+		var teacher = await _teacherRepository.GetByIdAsync(id);
+
+		return Result.Success<Teacher>(teacher);
+	}
 }
 
 

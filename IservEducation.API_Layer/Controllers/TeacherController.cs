@@ -59,22 +59,27 @@ public class TeacherController : ControllerBase
 		return Ok(response);
 	}
 
-	//[HttpGet("{id:guid}")]
-	//public async Task<IActionResult> GetById([FromRoute] Guid id)
-	//{
-	//	var teacher = await _teacherService.GetByIdAsync(id);
-		
-	//	if (teacher == null) 
-	//		return NotFound();
+	[HttpGet("{id:guid}")]
+	public async Task<IActionResult> GetById([FromRoute] Guid id)
+	{
+		var result = await _teacherService.GetByIdAsync(id);
 
-	//	return Ok(new
-	//	{
-	//		teacher.Id,
-	//		teacher.Login,
-	//		teacher.FirstName,
-	//		teacher.LastName,
-	//		teacher.MiddleName,
-	//		Lessons = teacher.LessonIds
-	//	});
-	//}
+		if(result.IsFailure)
+			return BadRequest(result.Error);
+
+		var teacher = result.Value!;
+
+		if (teacher == null)
+			return NotFound();
+
+		return Ok(new
+		{
+			teacher.Id,
+			teacher.Login,
+			teacher.FirstName,
+			teacher.LastName,
+			teacher.MiddleName,
+			Lessons = teacher.LessonIds
+		});
+	}
 }

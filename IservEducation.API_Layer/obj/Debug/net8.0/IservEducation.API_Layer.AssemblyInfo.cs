@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IservEducation.API_Layer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+feace70f8636b63277f6e6701a606b89427c8851")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8d2620eb18f0d8018473e7084301f170abb5df6")]
 [assembly: System.Reflection.AssemblyProductAttribute("IservEducation.API_Layer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IservEducation.API_Layer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
