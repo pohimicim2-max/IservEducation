@@ -15,14 +15,14 @@ public class TeacherRepository : ITeacherRepository
 
 	public async Task<Guid> AddAsync(Teacher teacher)
 	{
-		if (teacher == null) 
+		if (teacher == null)
 			throw new ArgumentNullException(nameof(teacher));
-		
+
 		if (GetByLoginAsync(teacher.Login) != null)
 			throw new InvalidOperationException($"User with login \"{teacher.Login}\" already exists");
 
 		var entity = MapToEntity(teacher);
-		
+
 		await _dbContext.Teachers.AddAsync(entity);
 		await _dbContext.SaveChangesAsync();
 
@@ -42,7 +42,7 @@ public class TeacherRepository : ITeacherRepository
 	public async Task<Guid> DeleteAsync(Guid id)
 	{
 		var findedTeacher = await _dbContext.Teachers.FindAsync(id);
-		
+
 		if (findedTeacher == null)
 			throw new ArgumentNullException(nameof(findedTeacher));
 
@@ -69,7 +69,7 @@ public class TeacherRepository : ITeacherRepository
 
 	public async Task<Teacher?> GetByLoginAsync(string login)
 	{
-		if (string.IsNullOrWhiteSpace(login)) 
+		if (string.IsNullOrWhiteSpace(login))
 			return null;
 
 		var findedTeacherEntity = await _dbContext.Teachers
