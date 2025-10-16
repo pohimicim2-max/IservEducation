@@ -9,8 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddSingleton<IPasswordHasher, BCryptPasswordHasher>();
-builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
-builder.Services.AddScoped<ITeacherService, TeacherService>();
+builder.Services.AddScoped<ITeachersRepository, TeachersRepository>();
+builder.Services.AddScoped<IStudentsRepository, StudentsRepository>();
+builder.Services.AddScoped<ITeachersService, TeachersService>();
+builder.Services.AddScoped<IStudentsService, StudenstService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

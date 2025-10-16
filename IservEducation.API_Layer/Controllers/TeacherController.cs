@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class TeacherController : ControllerBase
 {
-	private readonly ITeacherService _teacherService;
+	private readonly ITeachersService _teacherService;
 
-	public TeacherController(ITeacherService teacherService)
+	public TeacherController(ITeachersService teacherService)
 	{
 		_teacherService = teacherService;
 	}
