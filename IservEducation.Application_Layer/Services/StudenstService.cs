@@ -49,4 +49,14 @@ public class StudenstService : IStudentsService
 
 		return Result.Success<Student>(student);
 	}
+
+	public async Task<Result<Guid>> DeleteAsync(Guid id)
+	{
+		if (id == Guid.Empty)
+			return Result.Failure<Guid>("id are required");
+
+		var deletedId = await _studentRepository.DeleteAsync(id);
+
+		return Result.Success<Guid>(deletedId);
+	}
 }

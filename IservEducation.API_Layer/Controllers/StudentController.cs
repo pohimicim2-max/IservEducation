@@ -61,4 +61,16 @@ public class StudentController : ControllerBase
 			student.LessonStatisticIds
 		});
 	}
+
+	[HttpDelete("{id:guid}")]
+	public async Task<IActionResult> DeletedById([FromRoute] Guid id)
+	{
+		if (id == Guid.Empty)
+			return BadRequest("Id is required");
+
+		var deletedId = await _studentsService.DeleteAsync(id);
+
+		return Ok(new { UserId = deletedId.Value });
+	}
 }
+
