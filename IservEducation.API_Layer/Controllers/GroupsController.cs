@@ -45,7 +45,18 @@ public class GroupsController : ControllerBase
 		if (group == null)
 			return NotFound();
 
-		return Ok(group);
+		var studentsResponse = group.Students
+			?.Select(s => new StudentResponse(
+				s.FirstName,
+				s.LastName,
+				s.MiddleName,
+				s.CountCodeCoin
+			))
+			.ToList() ?? new List<StudentResponse>();
+
+		var response = new GroupResponse(group.Name, studentsResponse);
+
+		return Ok(response);
 	}
 	[HttpDelete("{id:guid}")]
 	public async Task<IActionResult> DeleteById([FromRoute] Guid id)

@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using IservEducation.API_Layer.Conracts.Requests;
+using IservEducation.API_Layer.Conracts.Responses;
 using IservEducation.Application_Layer.Interfaces;
 using IservEducation.Application_Layer.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -51,16 +52,12 @@ public class StudentController : ControllerBase
 		if (student == null)
 			return NotFound();
 
-		return Ok(new
-		{
-			student.Id,
+		return Ok(new StudentResponse(
 			student.FirstName,
 			student.LastName,
 			student.MiddleName,
-			student.GroupId,
-			student.CountCodeCoin,
-			student.LessonStatisticIds
-		});
+			student.CountCodeCoin
+		));
 	}
 
 	[HttpDelete("{id:guid}")]

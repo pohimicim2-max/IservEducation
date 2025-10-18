@@ -2,5 +2,5 @@
 
 public record GroupResponse(
 	string Name,
-	List <StudentResponse> StudentsId 
+	List <StudentResponse> Students
 );

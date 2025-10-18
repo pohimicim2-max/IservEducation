@@ -6,7 +6,5 @@ public record StudentResponse(
 	string FirstName,
 	string LastName,
 	string? MiddleName,
-	Guid? GroupID,
-	int? CountCodeCoin,
-	List<LessonStatistic?> LessonsStatistic
+	int? CountCodeCoin
 );
