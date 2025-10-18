@@ -1,4 +1,5 @@
-﻿using IservEducation.API_Layer.Conracts.Requests;
+﻿using CSharpFunctionalExtensions;
+using IservEducation.API_Layer.Conracts.Requests;
 using IservEducation.Application_Layer.Interfaces;
 using IservEducation.Application_Layer.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -68,9 +69,12 @@ public class StudentController : ControllerBase
 		if (id == Guid.Empty)
 			return BadRequest("Id is required");
 
-		var deletedId = await _studentsService.DeleteAsync(id);
+		var result = await _studentsService.DeleteAsync(id);
 
-		return Ok(new { UserId = deletedId.Value });
+		if (result.IsFailure)
+			return BadRequest(result.Error);
+
+		return Ok(new { UserId = result.Value });
 	}
 }
 

@@ -19,11 +19,5 @@ public class GroupEntityConfiguration : IEntityTypeConfiguration<GroupEntity>
 			   .WithOne(s => s.Group)
 			   .HasForeignKey(s => s.GroupId)
 			   .OnDelete(DeleteBehavior.SetNull);
-
-		// Group -> Lessons
-		builder.HasMany(g => g.Lessons)
-			   .WithOne(l => l.Group)
-			   .HasForeignKey(l => l.GroupId)
-			   .OnDelete(DeleteBehavior.SetNull);
 	}
 }

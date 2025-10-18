@@ -136,7 +136,6 @@ C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.AP
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\obj\Debug\net8.0\IservEducation.API_Layer.pdb
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\obj\Debug\net8.0\IservEducation.API_Layer.genruntimeconfig.cache
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\obj\Debug\net8.0\ref\IservEducation.API_Layer.dll
-C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\bin\Debug\net8.0\CSharpFunctionalExtensions.dll
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -150,3 +149,4 @@ C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.AP
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\bin\Debug\net8.0\IservEducation.Application_Layer.pdb
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\bin\Debug\net8.0\IservEducation.Infrastructure_Layer.pdb
 C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\bin\Debug\net8.0\IservEducation.Domain_Layer.pdb
+C:\My_Directory\Programming\Console_C#_Projects\IservEducation\IservEducation.API_Layer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

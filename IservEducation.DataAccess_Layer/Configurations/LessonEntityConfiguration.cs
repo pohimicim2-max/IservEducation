@@ -27,11 +27,5 @@ public class LessonEntityConfiguration : IEntityTypeConfiguration<LessonEntity>
 			   .WithMany(t => t.Lessons)
 			   .HasForeignKey(l => l.TeacherId)
 			   .OnDelete(DeleteBehavior.SetNull);
-
-		// Lesson -> Group
-		builder.HasOne(l => l.Group)
-			   .WithMany(g => g.Lessons)
-			   .HasForeignKey(l => l.GroupId)
-			   .OnDelete(DeleteBehavior.SetNull);
 	}
 }

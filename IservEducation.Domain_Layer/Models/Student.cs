@@ -52,6 +52,23 @@ public sealed class Student
 
 		return Result.Success(student);
 	}
+	public void AddCodeCoin(int codeCoin)
+	{
+		if(codeCoin < 0 || codeCoin > 999)
+			throw new ArgumentException("Ivalid value for add", nameof(codeCoin));
+
+		CountCodeCoin += codeCoin;
+	}
+	public void SubtractCodeCoin(int codeCoin)
+	{
+		if(codeCoin < 0 || codeCoin > 999)
+			throw new ArgumentException("Ivalid value for add", nameof(codeCoin));
+
+		CountCodeCoin -= codeCoin;
+
+		if (CountCodeCoin < 0)
+			CountCodeCoin = 0;
+	}
 	public Result EnrollGroup(Guid groupId)
 	{
 		if (groupId == Guid.Empty)

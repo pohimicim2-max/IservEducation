@@ -3,6 +3,7 @@ using System;
 using IservEducation.DataAccess_Layer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace IservEducation.DataAccess_Layer.Migrations
 {
     [DbContext(typeof(IservEducationDbContext))]
-    partial class IservEducationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251017163418_Update GroupEntity")]
+    partial class UpdateGroupEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

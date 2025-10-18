@@ -3,11 +3,14 @@
 public sealed class Teacher
 {
 	public Guid Id { get; private set; }
+
 	public string Login { get; private set; } = string.Empty;
 	public string PasswordHash { get; private set; } = string.Empty;
+
 	public string FirstName { get; private set; } = string.Empty;
 	public string LastName { get; private set; } = string.Empty;
 	public string? MiddleName { get; private set; } = string.Empty;
+
 
 	private readonly List<Guid> _lessonIds = new(); // приватный список проставленных уроков
 	public IReadOnlyCollection<Guid> LessonIds => _lessonIds.AsReadOnly(); // публичный список для чтения уроков

@@ -5,13 +5,15 @@ namespace IservEducation.Domain_Layer.Models;
 public sealed class Group
 {
 	public Guid Id { get; private set; }
+
 	public string Name { get; private set; } = string.Empty;
 
-	private readonly List<Guid> _studentIds = new();
-	public IReadOnlyCollection<Guid> StudentIds => _studentIds.AsReadOnly();
+
+	private readonly List<Guid> _studentId = new();
+	public IReadOnlyCollection<Guid> StudentIds => _studentId.AsReadOnly();
 
 	private Group() { }
-	public static Result<Group> Create(Guid id, string name, IEnumerable<Guid>? initialStudentIds = null)
+	public static Result<Group> Create(Guid id, string name, IEnumerable<Guid>? studentsId = null)
 	{
 		if (id == Guid.Empty)
 			return Result.Failure<Group>("Id must be a non-empty Guid");
@@ -28,14 +30,14 @@ public sealed class Group
 			Name = name.Trim()
 		};
 
-		if (initialStudentIds != null)
+		if (studentsId != null)
 		{
-			var normalized = initialStudentIds
+			var normalized = studentsId
 				.Where(g => g != Guid.Empty)
 				.Distinct()
 				.ToList();
 
-			group._studentIds.AddRange(normalized);
+			group._studentId.AddRange(normalized);
 		}
 
 		return Result.Success(group);
@@ -46,19 +48,19 @@ public sealed class Group
 		if (studentId == Guid.Empty)
 			return Result.Failure("StudentId must be a non-empty Guid");
 
-		if (_studentIds.Contains(studentId))
+		if (_studentId.Contains(studentId))
 			return Result.Failure("Student already in group");
 
-		_studentIds.Add(studentId);
+		_studentId.Add(studentId);
 		return Result.Success();
 	}
 
-	public Result RemoveStudent(Guid studentId)
+	public Result RemoveStudent(Guid lessonId)
 	{
-		if (studentId == Guid.Empty)
+		if (lessonId == Guid.Empty)
 			return Result.Failure("StudentId must be a non-empty Guid");
 
-		var removed = _studentIds.Remove(studentId);
+		var removed = _studentId.Remove(lessonId);
 
 		if (!removed) 
 			return Result.Failure("Student not found in group");
@@ -75,18 +77,18 @@ public sealed class Group
 			.Distinct()
 			.ToList();
 
-		bool isEqual = _studentIds.Count == normalized.Count && !_studentIds.Except(normalized).Any();
+		bool isEqual = _studentId.Count == normalized.Count && !_studentId.Except(normalized).Any();
 
 		if (isEqual) return Result.Success();
 
-		_studentIds.Clear();
-		_studentIds.AddRange(normalized);
+		_studentId.Clear();
+		_studentId.AddRange(normalized);
 
 		return Result.Success();
 	}
 
-	public bool HasStudent(Guid studentId) => _studentIds.Contains(studentId);
-	public IReadOnlyCollection<Guid> GetStudentIds() => _studentIds.AsReadOnly();
+	public bool HasStudent(Guid studentId) => _studentId.Contains(studentId);
+	public IReadOnlyCollection<Guid> GetStudentIds() => _studentId.AsReadOnly();
 
 	public Result UpdateName(string newName)
 	{
@@ -103,5 +105,5 @@ public sealed class Group
 
 		Name = trimmed;
 		return Result.Success();
-	}
+	}		
 }
