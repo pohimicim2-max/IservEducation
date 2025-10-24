@@ -82,7 +82,7 @@ public class GroupsController : ControllerBase
 			return BadRequest("Student Id is required");
 
 		var result = await _groupsService.AddStudentToGroupAsync(id, studentId);
-
+			
 		if (result.IsFailure)
 			return BadRequest(result.Error);
 

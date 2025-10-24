@@ -1,6 +1,6 @@
 ﻿namespace IservEducation.Application_Layer.DTO;
 
-public record LessonStatisticDto (
+public record LessonStatisticDTO (
 	Guid Id, 
 	Guid LessonId,
 	Guid StudentId,

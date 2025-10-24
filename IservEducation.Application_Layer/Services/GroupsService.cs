@@ -27,7 +27,7 @@ public class GroupsService : IGroupsService
 			return Result.Failure<Guid>(result.Error);
 
 		var group = result.Value;
-
+			
 		await _groupRepository.AddAsync(group);
 		return Result.Success(group.Id);
 	}

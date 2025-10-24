@@ -56,7 +56,7 @@ public class GroupsRepository : IGroupsRepository
 			throw new ArgumentNullException(nameof(group));
 
 		var existingEntity = await _dbContext.Groups
-			.FirstOrDefaultAsync(g => g.Id == group.Id);
+			.FirstOrDefaultAsync	(g => g.Id == group.Id);
 
 		if (existingEntity == null)
 			throw new ArgumentNullException($"Group with id {group.Id} not found");
